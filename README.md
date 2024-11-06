@@ -1,5 +1,7 @@
 
-# Jawaban Pertanyaan Tugas 2
+# Jawaban Pertanyaan Tugas 7
+<details>
+  <summary>Jawaban</summary>
 
 ## Pertanyaan 1
 
@@ -173,4 +175,86 @@ Jawaban:
 
 9. **Menggunakan Kelas `InfoCard` untuk Menampilkan Informasi Pengguna**  
    Kelas `InfoCard` digunakan untuk menampilkan informasi seperti NPM, Nama, dan Kelas di bagian atas halaman dalam bentuk kartu yang ditampilkan menggunakan widget `Row`.
+
+</details>
+
+
+
+# Jawaban Pertanyaan Tugas 8
+<details>
+  <summary>Jawaban</summary>
+
+## Pertanyaan 1
+
+_Apa kegunaan const di Flutter? Jelaskan apa keuntungan ketika menggunakan const pada kode Flutter. Kapan sebaiknya kita menggunakan const, dan kapan sebaiknya tidak digunakan?_
+
+Jawaban :
+
+Kegunaan `const` di Flutter adalah untuk mendefinisikan objek atau nilai yang tetap dan tidak berubah saat runtime, dikenal sebagai konstanta waktu kompilasi. Menggunakan `const` memberikan beberapa keuntungan:
+
+1. **Optimasi Performa:** Widget `const` di Flutter dikenali sebagai objek tetap yang bisa digunakan kembali, sehingga mengurangi beban alokasi objek baru dan mempercepat rendering UI.
+
+2. **Manajemen Widget yang Efisien:** `const` membantu meminimalkan rebuild widget tree, membuat UI lebih responsif.
+
+3. **Keterbacaan dan Pemeliharaan Kode:** `const` menjamin objek tidak berubah, sehingga kode lebih mudah dipahami dan risiko perubahan yang tidak diinginkan berkurang.
+
+4. **Mengikuti Prinsip Immutability:** Menggunakan `const` mendukung prinsip pemrograman fungsional di Flutter, membuat kode lebih mudah diuji.
+
+Kapan Menggunakan `const`
+- Untuk objek data statis yang tidak akan berubah, seperti warna atau gaya teks.
+- Untuk nilai pradefinisi, seperti API endpoint atau data konfigurasi yang tetap sepanjang aplikasi.
+- Untuk widget yang sering digunakan dan tidak berubah, seperti ikon atau teks statis, untuk meningkatkan efisiensi widget tree.
+
+Kapan Tidak Menggunakan `const`
+- Untuk data yang dapat berubah selama runtime, seperti input pengguna.
+- Untuk data yang diambil dari sumber eksternal atau jaringan, seperti API, yang nilainya bisa berubah.
+- Untuk objek yang memerlukan perubahan nilai setelah dibuat, misalnya data yang diproses berdasarkan interaksi pengguna.
+
+
+Referensi : 
+
+https://blog.bytescrum.com/defining-constants-in-flutter-best-practices
+
+https://www.dhiwise.com/post/why-flutter-prefer-const-with-constant-constructor
+
+## Pertanyaan 2
+
+_Jelaskan dan bandingkan penggunaan Column dan Row pada Flutter. Berikan contoh implementasi dari masing-masing layout widget ini!_
+
+Jawaban :
+
+Column dan Row adalah dua widget utama dalam Flutter yang digunakan untuk menyusun tampilan secara vertikal (atas ke bawah) dan horizontal (kiri ke kanan) secara berurutan. Keduanya memiliki properti alignment yang serupa, seperti mainAxisAlignment dan crossAxisAlignment, yang mengontrol bagaimana anak-anak (widget) di dalamnya diselaraskan.
+
+Column: Menyusun widget secara vertikal dari atas ke bawah. Sangat cocok untuk membuat tata letak yang membutuhkan elemen-elemen ditumpuk secara vertikal.
+
+Row: Menyusun widget secara horizontal dari kiri ke kanan. Biasanya digunakan saat elemen-elemen perlu ditampilkan berdampingan secara horizontal.
+
+Contoh Implementasi Column pada kode di projek flutter ini terdapat pada `addproduct_form.dart`
+
+Referensi :
+
+```dart
+Column(
+  crossAxisAlignment: CrossAxisAlignment.start,
+  children: [
+      ...
+  ],
+)
+```
+Contoh Implementasi Row pada kode di projek flutter ini terdapat pada `menu.dart`
+```dart
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            // Row untuk menampilkan 3 InfoCard secara horizontal.
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                ...
+              ],
+            ),])
+```
+Referensi :
+
+https://www.geeksforgeeks.org/row-and-column-widgets-in-flutter-with-example/
 
