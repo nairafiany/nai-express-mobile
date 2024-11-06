@@ -61,7 +61,7 @@ class MyHomePage extends StatelessWidget {
                   const Padding(
                     padding: EdgeInsets.only(top: 16.0),
                     child: Text(
-                      'Welcome to Mental Health Tracker',
+                      'Welcome to Nai Express',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 18.0,
