@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nai_express_mobile/menu.dart';
+import 'package:nai_express_mobile/screens/menu.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,7 +31,8 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSwatch().copyWith(
           primary: Colors.blue[900], // Dark blue
-          secondary: Colors.blue[800], // Adjust this to another shade of blue if needed
+          secondary: Colors
+              .blue[800], // Adjust this to another shade of blue if needed
         ),
         useMaterial3: true,
       ),
