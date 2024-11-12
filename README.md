@@ -258,3 +258,64 @@ Referensi :
 
 https://www.geeksforgeeks.org/row-and-column-widgets-in-flutter-with-example/
 
+## Pertanyaan 3
+
+_Sebutkan apa saja elemen input yang kamu gunakan pada halaman form yang kamu buat pada tugas kali ini. Apakah terdapat elemen input Flutter lain yang tidak kamu gunakan pada tugas ini? Jelaskan!_
+
+
+Jawaban :
+
+Pada halaman form ini, terdapat beberapa elemen input yang digunakan:
+
+1. **TextFormField** untuk memasukkan data:
+   - **Name**: Memasukkan nama produk.
+   - **Amount**: Memasukkan jumlah produk, dengan validasi agar hanya menerima angka.
+   - **Description**: Memasukkan deskripsi produk.
+   - **Price**: Memasukkan harga produk, dengan validasi agar hanya menerima angka.
+   - **Discount**: Memasukkan diskon produk, dengan validasi agar hanya menerima angka.
+
+2. **ElevatedButton** sebagai tombol **Save** untuk menyimpan data setelah semua input divalidasi.
+
+Selain elemen-elemen input di atas, terdapat beberapa elemen input di Flutter yang tidak digunakan dalam tugas ini, seperti:
+   - **DropdownButton**: Untuk menampilkan daftar pilihan dalam bentuk dropdown.
+   - **Checkbox**: Untuk opsi pilihan ganda.
+   - **Radio**: Untuk pilihan tunggal dalam satu grup.
+   - **Slider**: Untuk memilih nilai dalam rentang tertentu, seperti jumlah atau harga.
+   - **Switch**: Untuk pilihan hidup/mati (on/off).
+
+Elemen-elemen ini bisa digunakan untuk menambahkan variasi input yang lebih kompleks sesuai kebutuhan form.
+
+## Pertanyaan 4
+
+_Bagaimana cara kamu mengatur tema (theme) dalam aplikasi Flutter agar aplikasi yang dibuat konsisten? Apakah kamu mengimplementasikan tema pada aplikasi yang kamu buat?_
+
+Jawaban :
+
+Dalam aplikasi Flutter, tema (theme) dapat diatur dengan menggunakan `ThemeData` pada `MaterialApp`, seperti yang ditunjukkan pada kode di atas. Pengaturan ini memastikan konsistensi tampilan dan nuansa (look and feel) di seluruh aplikasi, sehingga elemen-elemen UI, seperti warna latar belakang, warna teks, dan komponen lainnya, tetap seragam.
+
+Langkah-langkah untuk mengatur tema pada aplikasi:
+1. Menggunakan properti `theme` pada `MaterialApp`.
+2. Mengonfigurasi elemen-elemen tema melalui `ThemeData`, seperti:
+   - `colorScheme`: Mengatur skema warna dasar aplikasi, termasuk warna utama (`primary`) dan warna sekunder (`secondary`).
+   - `useMaterial3`: Mengaktifkan Material 3 untuk tampilan komponen yang lebih modern.
+
+Pada aplikasi ini, saya telah mengimplementasikan tema dengan mengatur warna utama (`primary`) menjadi biru tua (`Colors.blue[900]`) dan warna sekunder (`secondary`) menjadi biru yang lebih terang (`Colors.blue[800]`). Hal ini memastikan elemen-elemen UI yang menggunakan warna utama dan sekunder akan tampil konsisten di seluruh aplikasi.
+
+Selain itu, saya juga menggunakan Material 3 untuk memberikan tampilan yang lebih modern dan mengikuti standar desain terbaru dari Flutter.
+
+
+## Pertanyaan 5
+
+_Bagaimana cara kamu menangani navigasi dalam aplikasi dengan banyak halaman pada Flutter?_
+
+Jawaban :
+
+Dalam aplikasi Flutter dengan banyak halaman, navigasi dapat diatur dengan menggunakan `Navigator`. Pada contoh kode di atas, terdapat beberapa cara yang digunakan untuk menangani navigasi, yaitu:
+
+1. **Navigator.push**: Digunakan untuk berpindah ke halaman baru tanpa mengganti halaman yang sedang aktif. Pada contoh `ItemCard`, ketika tombol "Tambah Produk" ditekan, `Navigator.push` digunakan untuk menampilkan halaman `AddProductFormPage` di atas halaman sebelumnya.
+
+2. **Navigator.pushReplacement**: Digunakan untuk mengganti halaman saat ini dengan halaman baru. Pada contoh `LeftDrawer`, ketika item menu dipilih, seperti "Halaman Utama" atau "Tambah Produk", `Navigator.pushReplacement` digunakan untuk menggantikan halaman saat ini dengan halaman tujuan.
+
+3. **Drawer untuk Navigasi Cepat**: Di dalam kelas `LeftDrawer`, terdapat elemen navigasi berupa drawer yang memudahkan pengguna untuk berpindah halaman dengan cepat. Drawer berisi daftar `ListTile`, yang masing-masing memiliki fungsi `onTap` yang memanggil `Navigator.pushReplacement` untuk mengarahkan ke halaman terkait.
+
+Dengan pendekatan ini, aplikasi menjadi lebih terstruktur dan mudah digunakan, memungkinkan pengguna untuk berpindah antarhalaman dengan lancar dan konsisten.
