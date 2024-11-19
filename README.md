@@ -449,4 +449,52 @@ Jawaban:
 Jawaban:
 
 
+
+1. Implementasi Fitur Registrasi dan Login:
+- Membuat app authentication di Django dan menambahkannya ke INSTALLED_APPS
+- Membuat views login dan register di Django untuk handle request dari Flutter
+- Membuat routing di urls.py untuk endpoint login dan register
+- Membuat halaman login.dart dan register.dart di Flutter
+- Menggunakan package pbp_django_auth untuk handle authentication di Flutter
+- Modifikasi widget root (main.dart) untuk menyediakan CookieRequest ke seluruh aplikasi
+
+2. Membuat Model Kustom:
+- Mendapatkan contoh response JSON dari endpoint Django yang sudah di-deploy
+- Menggunakan Quicktype untuk generate model Product dari JSON tersebut
+- Membuat file product.dart dalam folder models
+- Model mencakup seluruh field yang ada di model Product Django (name, description, price, stock, availability, discount, image)
+
+3. Membuat Halaman Daftar Product:
+- Membuat file list_product.dart dalam folder screens
+- Mengimplementasikan FutureBuilder untuk fetch data dari endpoint JSON Django
+- Menampilkan data dalam bentuk ListView dengan card untuk setiap product
+- Menampilkan name, price, dan description untuk setiap product
+- Menambahkan GestureDetector untuk navigasi ke halaman detail
+
+4. Membuat Halaman Detail Product:
+- Membuat file product_details.dart dalam folder screens  
+- Menerima data product sebagai parameter dari halaman list
+- Menampilkan seluruh atribut product (name, description, price, stock, availability, discount, image)
+- Menambahkan tombol "Kembali ke Daftar Produk" yang memanggil Navigator.pop()
+
+5. Implementasi Filter Product:
+- Memodifikasi endpoint JSON di Django untuk hanya return product milik user yang login
+- Data user didapat dari request.user yang diset saat login
+- Product yang ditampilkan di Flutter otomatis terfilter karena menggunakan data dari endpoint yang sudah difilter
+
+6. Integrasi dengan Endpoint JSON:
+- Menggunakan package http untuk melakukan HTTP request ke Django
+- Request dilakukan dengan menyertakan cookie yang berisi session id
+- Response JSON di-decode dan dikonversi menjadi object Product menggunakan model yang sudah dibuat
+- Data ditampilkan di UI menggunakan FutureBuilder
+
+7. Navigation dan State Management:
+- Menggunakan Navigator untuk pindah antar halaman
+- Provider digunakan untuk state management terutama untuk CookieRequest
+- Drawer diperbarui untuk menampilkan link ke halaman products
+- Implementasi logout untuk menghapus session
+
+
+
+
 </details>
