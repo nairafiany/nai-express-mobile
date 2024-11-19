@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nai_express_mobile/screens/list_product.dart';
 import 'package:nai_express_mobile/screens/menu.dart';
 import 'package:nai_express_mobile/screens/addproduct_form.dart';
 
@@ -63,6 +64,17 @@ class LeftDrawer extends StatelessWidget {
                   ));
             },
           ),
+          ListTile(
+            leading: const Icon(Icons.add_reaction_rounded),
+            title: const Text('Daftar Produk'),
+            onTap: () {
+              // Route menu ke halaman mood
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const ProductPage()),
+              );
+            },
+          )
         ],
       ),
     );
